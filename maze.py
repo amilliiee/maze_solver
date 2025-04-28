@@ -73,12 +73,12 @@ class Maze:
                 next_index_list.append((i, j + 1))
 
             # if there is nowhere to go from here
-            # just break out
+            # break out
             if len(next_index_list) == 0:
                 self._draw_cell(i, j)
                 return
 
-            # randomly choose the next direction to go
+            # randomly choose next direction
             direction_index = random.randrange(len(next_index_list))
             next_index = next_index_list[direction_index]
 
@@ -109,7 +109,6 @@ class Maze:
                 cell.visited = False
 
     # returns True if this is the end cell, OR if it leads to the end cell.
-    # returns False if this is a loser cell.
     def _solve_r(self, i, j):
         self._animate()
 
